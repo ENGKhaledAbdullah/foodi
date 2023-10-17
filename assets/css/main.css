@@ -7,40 +7,54 @@
     --light-green-color:#c1f1c6;
     --scroll-arrow-button-color:#efefef;
     --section-padding:60px;
-    
 }
-
-
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    transition: 0.5s;
 }
 body{
     background-color: #fafafa;
 }
 .container{
     width: 100%;
-    padding: 30px 120px;
+    padding: 0px 120px;
+    overflow: hidden;
 }
+/* #region navbar */
+
+
 .navbar{
     text-transform: capitalize;
     display: flex;
     justify-content: space-between;
-    background-color: white;
+    background-color: var(--background-color);
     padding-right: 20px;
     font-size: 18px;
-    position:relative;
+    position:fixed;
+    z-index: 999;
+    padding: 10px 100px;
+    left: 0;
+    top: 0;
+    height: 80px;
     width: 100%;
+    box-shadow:  0px 5px 5px -5px rgba(0, 0, 0, 0.5);
+}
+.transparent{
+    background-color: transparent;
 }
 .navbar nav{
     margin-top: 15px;
     width: 50%;
-    margin-left: 150px;
+    margin-left: 5%;
+}
+.logo{
+    padding: 10px;
 }
 .navbar nav a:first-child{
-    margin-right: 20px;
+    margin-right: 2%;
 }
 .navbar nav a{
     text-decoration: none;
@@ -56,9 +70,6 @@ body{
     font-size:18px ;
     cursor: pointer;
     width:max-content;
-}
-
-.navbar select {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -67,7 +78,6 @@ body{
     border: none;
     border-radius: 4px;
 }
-
 option{
     font-size: 16px;
     color: var(--green-color);
@@ -95,19 +105,23 @@ option{
     border: none;
     border-radius: 20px;
 }
+/* #endregion */
+/* #region hero */
 .hero{
     width: 100%;
-    height: 90vh;
+    height: fit-content;
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 80px;
 }
 .hero-text{
-    width: 50%;
-    
+    width: 50%; 
 }
 .hero-text h3{
     margin-top: 100px;
-    font-size:4rem ;
-    
+    font-size:4.2vw;
+    width: 95%;
 }
 .hero-text h3 span{
     color: var(--green-color);
@@ -121,11 +135,11 @@ option{
 }
 .hero-btns{
     margin-top: 50px;
+    display: flex;
 }
 .btn{
     border: none;
     font-size: 1.6rem;
-    padding: 10px 25px;
     border-radius: 50px;
     height: 70px;
     cursor: pointer;
@@ -153,21 +167,24 @@ option{
 .hero-img{
     width: 50%;
 }
-.hero-img .img img{
-    width: 80%;
-    margin-left: 100px;
-}
-.hero-img .img::before{
-    content: '';
-    position: absolute;
-    width:425px;
-    height: 385px;
-    top: 32.9%;
-    left: 60.6%;
-    z-index: -1;
+.hero-img .hero-img-container{
+    background-color: #39db4a;
     border-radius: 50%;
-    background-color: var(--green-color);
+    position: relative;
+    top: 100px;
+    left: 112px;
+    width: 32rem;
+    height: 31rem;
+    text-align: center;
 }
+.hero-img .hero-img-container img{
+    width: 35.2rem;
+    height: 38.9rem;
+    position: relative;
+    bottom: 126px;
+    right: 50px;
+}
+
 .tag{
     background-color: white;
     font-size: large;
@@ -175,8 +192,8 @@ option{
     padding: 10px 20px;
     display: inline;
     position: absolute;
-    top: 34%;
-    left: 53.5%;
+    top: 29%;
+    left: 50.5%;
     color: var(--red-color);
     box-shadow: 5px 10px 10px  rgba(0, 0, 0, 0.263);
 }
@@ -192,18 +209,19 @@ option{
     background-color: white;
 }
 .hero-food{
-    position: absolute;
-    top: 80%;
-    left: 57%;
+    position: relative;
+    width: 90%;
+    top: 7%;
+    left: 15%;
     display: flex;
+    justify-content: space-between  ;
 }
 .hero-food .food1,.hero-food .food2{
     margin-right: 50px;
     border-radius: 10px;
-    width: 210px;
-    padding: 10px 0;
+    width: 220px;
+    padding: 10px;
     display: flex;
-    justify-content: space-evenly  ;
     background-color: white;
     box-shadow: 0px 10px 20px  rgba(0, 0, 0, 0.263);
 }
@@ -221,12 +239,16 @@ option{
     width: 60px;
     height: 60px;
     border-radius: 10px;
+    margin-right: 10px;
 }
+/* #endregion */
+/* #region categories */
 .categories{
     width: 100%;
-    height: 90vh;
+    height: fit-content;
     text-align: center;
     padding-top: 100px;
+    margin-bottom: 150px;
 }
 .subtitle{
     color: var(--red-color);
@@ -241,14 +263,15 @@ option{
 }
 .category-cards{
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     justify-content: space-between;
 }
 .card{
-    width: 300px;
+    min-width: 270px;
     padding: 50px;
     border-radius: 30px;
-    margin-right: 50px;
+    margin-bottom: 50px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.139);
 }
 .card-img-container{
@@ -279,7 +302,7 @@ option{
 .category-cards  .card:nth-child(4) img{
     width: 60px;
 } 
-.category-cards  .card:nth-child(4){
+.category-cards  .card:nth-child(3){
     margin-right: 0;
 }
 .card-p{
@@ -293,28 +316,28 @@ option{
     color: var(--text-color);
     font-size: 1.1rem;
 }
+/* #endregion */
+/* #region special-dishes */
 .special-dishes{
     width: 100%;
-    height: 100vh;
+    height: fit-content;
     padding-top: 100px;
+    margin-bottom: 150px;
 }
 .dishes-cards{
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    margin-top: -80px;
+    /* width: 100%; */
     overflow: hidden;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     padding-left: 20px;
     height: 500px;
 }
 .dishes-cards img{
     width: 220px;
-    
 }
 .special-dishes .title{
     width: 40%;
-    
 }
 .dishes-cards .card{
     width: 400px;
@@ -334,7 +357,6 @@ option{
 }
 .scroll-arrows img{
     width: 50px;
-    /* background-color: var(--green-color); */
     position: absolute;
 }
 .scroll-arrows button{
@@ -410,11 +432,14 @@ option{
     color: white;
     border-radius: 0 30px 0 30px;
 }
+/* #endregion */
+/* #region testimonial */
 .testimonial{
     width: 100%;
-    height: 100vh;
-    margin-top: 200px;
+    height: fit-content;
+    margin-top: 100px;
     display: flex;
+    margin-bottom: 150px;
 }
 .testimonial-img{
     width: 50%;
@@ -518,10 +543,13 @@ option{
     left:60px;
     top: -30px;
 }
+/* #endregion */
+/* #region services */
 .services{
     width: 100%;
     display: flex;
-    height: 100vh;
+    height: fit-content;
+    margin-bottom: 150px;
 }
 .services .services-text{
     width: 50%;
@@ -561,8 +589,10 @@ option{
     color: #30a53cb3;
     font-weight: bold;
 }
+/* #endregion */
+/* #region footer */
 footer{
-    height: 50vh;
+    height: fit-content;
     width: 100%;
     display: grid;
     grid-template-columns:  repeat(auto-fit, minmax(150px,1fr));
@@ -590,6 +620,8 @@ footer  div:first-child p {
     margin-top: 20px;
     width: 100%;
 }
+/* #endregion */
+/* #region lower footer */
 .lower-footer{
     display: flex;
 }
@@ -611,4 +643,113 @@ footer  div:first-child p {
     margin-left:250px;  
     font-size: 20px;
     color: var(--text-color);
+}
+/* #endregion */
+@media screen and (max-width:1400px) {
+    .hero-food{
+        width: 120%;
+        justify-content: left;
+    }
+    .hero-text h3{
+        font-size: 4vw;    
+        }
+        .hero-text p{
+            font-size: 2vw;
+            margin-top: 40px;
+        }
+        .hero-btns{
+            margin-top: 40px;
+            display: flex;
+        }
+        .btn{
+            font-size: 1.5rem;
+            padding: 15px 25px;
+        }
+}
+@media screen and (max-width:1200px){
+    
+    .hero-text h3{
+    font-size: 3.9vw;    
+    }
+    .hero-text p{
+        font-size: 1.8vw;
+        line-height: 25px;
+        margin-top: 30px;
+    }
+    .hero .hero-img-container   {
+        width: 25rem;
+        height: 24rem;
+    }
+    .hero .hero-img-container img{
+        width: 27.8rem;
+        height: 31.9rem;
+        bottom: 126px;
+        right: 41px;
+    }
+    .hero-food{
+        width: 120%;
+    }
+    .hero-food .food1,.hero-food .food2{
+        margin-right: 50px; 
+    }
+    .hero-btns{
+        margin-top: 30px;
+    }
+    .btn{
+        font-size: 1.4rem;
+        padding: 15px 25px;
+    }
+}
+@media screen and (max-width:1100px){
+    
+    .hero-text h3{
+    font-size: 3.6;    
+    }
+    .hero-text p{
+        font-size: 1.8vw;
+    }
+    .hero .hero-img-container   {
+        width: 25rem;
+        height: 24rem;
+    }
+    .hero-food{
+        width: 150%;
+    }
+    .hero .hero-img-container img{
+        width: 27.8rem;
+        height: 31.9rem;
+        bottom: 126px;
+        right: 41px;
+    }
+    .btn{
+        font-size: 1.2rem;
+    }
+}
+@media screen and (max-width:980px) {
+    .hero{
+        display: block;
+        height: 160vh;
+    }
+    .hero-text,.hero-img{
+        width: 100%;
+        margin-top: 50px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .hero-text{
+        top: 20%;
+    }
+    .hero-img{
+        top: 35%;
+    }
+    .hero-img-container{
+        top: 150px;
+        left: 112px;
+    }
+    .tag{
+        top: 30%;
+        left: 0%;
+    }
 }
