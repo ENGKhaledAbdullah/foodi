@@ -266,6 +266,7 @@ option{
     flex-wrap: wrap;
     width: 100%;
     justify-content: space-between;
+    
 }
 .card{
     min-width: 270px;
@@ -327,10 +328,8 @@ option{
 .dishes-cards{
     display: flex;
     justify-content: space-between;
-    /* width: 100%; */
     overflow: hidden;
-    /* white-space: nowrap; */
-    padding-left: 20px;
+    padding-left: 10px;
     height: 500px;
 }
 .dishes-cards img{
@@ -339,10 +338,12 @@ option{
 .special-dishes .title{
     width: 40%;
 }
-.dishes-cards .card{
-    width: 400px;
+.dishes-cards .dish-card{
     height: 400px;
-    padding-top: 10px;
+    margin: 10px 20px 10px 10px;
+    padding: 0px 60px;
+    border-radius: 30px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.139);
 }
 .dishes-cards .card:last-child{
     margin-right: 0;
@@ -352,8 +353,8 @@ option{
     width: 250px;
     justify-content: space-evenly;
     position: relative;
-    top: -17%;
-    left:80%;
+    bottom: 80px;
+    left:82%;
 }
 .scroll-arrows img{
     width: 50px;
@@ -387,7 +388,8 @@ option{
 .dishes-cards .card-img-container{
     background-color: transparent;
     width: 260px;
-    transform: translate(-40%,-180%);
+    top: 10%;
+    left: 60%;
 }
 .dishes-cards .card-p{
     margin-top: 80px;
@@ -428,7 +430,7 @@ option{
     text-align: center;
     padding-top: 20px;
     top: -10px;
-    left: 93%;
+    left: 96%;
     color: white;
     border-radius: 0 30px 0 30px;
 }
@@ -665,9 +667,16 @@ footer  div:first-child p {
             font-size: 1.5rem;
             padding: 15px 25px;
         }
+
+        .title{
+            font-size: 3.2rem; 
+        }
 }
 @media screen and (max-width:1200px){
-    
+    .title{
+        font-size: 3.1rem;
+    }
+
     .hero-text h3{
     font-size: 3.9vw;    
     }
@@ -701,7 +710,9 @@ footer  div:first-child p {
     }
 }
 @media screen and (max-width:1100px){
-    
+    .title{
+        font-size: 2.9rem;
+    }
     .hero-text h3{
     font-size: 3.6;    
     }
@@ -724,8 +735,17 @@ footer  div:first-child p {
     .btn{
         font-size: 1.2rem;
     }
+    .categories .category-cards{
+        position: relative;
+        width: 600px;
+        left: 13%;
+    }
 }
 @media screen and (max-width:980px) {
+    .special-dishes .title{
+        font-size: 2.6rem;
+        width: 80%;
+    }
     .hero{
         display: block;
         height: 160vh;
@@ -751,5 +771,13 @@ footer  div:first-child p {
     .tag{
         top: 30%;
         left: 0%;
+    }
+    .categories .category-cards{
+        position: relative;
+        width: 100%;
+        left: 30%;
+    }
+    .category-cards .card{
+        margin-right: 0;
     }
 }

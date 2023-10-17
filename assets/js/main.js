@@ -2,7 +2,7 @@
         let dishCards = document.getElementsByClassName('dishes-cards')[0];
         let cardWidth = document.querySelector('.card').offsetWidth;
         // let scrollDistance = dishCards.clientWidth + 90;
-        let scrollDistance=cardWidth+50;
+        let scrollDistance=cardWidth*1.5;
 
         function next() {
         dishCards.scrollBy({ 
